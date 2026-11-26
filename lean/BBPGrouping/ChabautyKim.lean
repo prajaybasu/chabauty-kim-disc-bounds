@@ -1,0 +1,20 @@
+module
+
+public import BBPGrouping.MirimanoffSieve
+public import BBPGrouping.MirimanoffLocalExpansion
+public import BBPGrouping.GroupedDilog
+public import BBPGrouping.MirimanoffFamily
+public import BBPGrouping.WolstenholmeSieve
+public import BBPGrouping.UniformDiscBound
+public import BBPGrouping.SelmerDiscBound
+public import BBPGrouping.MixedRank
+public import BBPGrouping.PolylogZeroEstimate
+public import BBPGrouping.LogarithmicZeroEstimate
+public import BBPGrouping.TorsionDisc
+public import BBPGrouping.ProjectiveDisc
+
+/-!
+# Chabauty–Kim residue discs
+
+Local expansions, finite-field sieves, and multiplicity estimates for logarithmic jets.
+-/

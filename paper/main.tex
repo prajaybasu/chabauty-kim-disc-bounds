@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\Li}{Li}
+\title{A zero estimate for triangular logarithmic systems\\
+and residue discs in Chabauty--Kim loci}
+\author{Prajay Basu}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a strictly triangular logarithmic system of rank \(N\) in characteristic
+\(p\) with a one-dimensional common left kernel, normalize the solution
+on that kernel. We bound the vanishing order of a polynomial linear form of degree \(A\)
+by \(NA+d\binom N2\) whenever this quantity is below \(p\).
+Here \(d\) depends on the poles and the centre of expansion.
+A family with two fixed poles and constant linear forms has quadratic
+vanishing order in the rank. Applied to finite polylogarithms, the estimate
+bounds the number of residue discs occupied by the refined depth-\(2s\)
+Chabauty--Kim locus of the thrice-punctured line by
+\(O_s(p^{1-1/(4s)})\), where \(s\) is the number of inverted primes.
+For \(S=\{2,3\}\) we identify a Bernoulli factor in a depth-four cofactor
+and determine the refined locus at the auxiliary primes
+\(16843\), \(1006003\), and \(2124679\).
+\end{abstract}
+
+\section{Introduction}
+A single equation between Coleman functions can have zeros in many residue
+discs. To bound the number of discs meeting a Chabauty--Kim locus, we
+eliminate the coordinate \emph{within} a disc. What remains is an equation
+over \(\mathbb F_p\) between the residue and its finite polylogarithms.
+Its coefficients can vary with the prime. The estimate must therefore
+apply to every nonzero equation of the prescribed degrees.
+
+Cyclic differentiation and minors also enter characteristic-zero
+multiplicity estimates \cite{Fischler}. Here the height bound on a
+normalized row controls the extra derivative constants in
+\(\mathbb F_p(X^p)\).
+
+\begin{theorem}[Triangular logarithmic zero estimate]\label{thm:zero}
+Let \(k=\mathbb F_p\), let \(\Sigma\subset k\) be finite and nonempty, and
+let \(b\in k\). In a common basis let \(A_a\) for \(a\in\Sigma\) be strictly
+upper triangular constant \(N\times N\) matrices whose common left kernel
+is spanned by a coordinate row \(e\). Write
+\(T=\prod_{a\in\Sigma\cup\{b\}}(X-a)\) and \(d=\deg T-1\).
+Suppose a polynomial column \(w\) satisfies \(ew=1\) and
+\[
+ T w'\equiv\sum_{a\in\Sigma}\frac{T}{X-a} A_a w\pmod{(X-b)^p}.
+\]
+If \(P\ne0\) is a polynomial row of degree at most \(A\) and
+\(H=NA+d\binom{N}{2}<p\), then \(\operatorname{ord}_b(Pw)\le H\).
+For two fixed poles and an ordinary centre there are systems of unbounded
+rank \(R\) and constant rows whose evaluations have order at least
+\(R^2/4-1\) and are nonzero modulo \((X-b)^p\), for every sufficiently
+large prime for each system.
+\end{theorem}
+
+Let \(X=\mathbb P^1\setminus\{0,1,\infty\}\) with its standard integral
+model. A residue disc is \emph{occupied} by a subset of \(X(\mathbb Z_p)\)
+if it contains a point of that subset. Thus the quantity we bound is the
+cardinality of its image in \(X(\mathbb F_p)\). We use the refined and
+unrefined Selmer conditions and the lower central series depth
+of \cite{BKL}.
+\begin{theorem}[Occupied residue discs]\label{thm:discs}
+For any finite set \(S\) of \(s\ge1\) rational primes and prime \(p\notin S\),
+the full refined Chabauty--Kim locus of \(X\) at depth \(2s\) occupies
+\(O_s(p^{1-1/(4s)})\) discs. The full unrefined locus at depth \(4s\)
+occupies \(O_s(p^{1-1/(8s)})\) discs. The constants depend only on \(s\).
+In particular the refined exponents at depths four for \(s=2\) and two
+for \(s=1\) are \(7/8\) and \(3/4\). For the inverse image of \(X\) in
+\(y^2=x^5-x\) under the hyperelliptic projection, the refined depth-two
+bound for \(S=\{2\}\) is also \(O(p^{3/4})\).
+\end{theorem}
+
+At depth four, L\"udtke's equations for \(S=\{2,3\}\) use two known
+points \(3,9\) to eliminate the global period coefficients of a
+determinant \cite[Theorem~3.8]{Ludtke}. We use \(\log_p(p)=0\),
+\(Y_m(x)=p^{-m}\Li_m(x)\), and \(k=\log_p(2)/p\). Define \(A\) as the
+first signed cofactor of the two anchor rows
+\[
+ (Y_4(x),\,jY_3(x),\,j^3Y_1(x)),\qquad (x,j)=(3,1),(9,2).
+\]
+This fixes the sign and the powers of the logarithm removed from the
+determinant.
+\begin{theorem}[Leading cofactor]\label{thm:cofactor}
+For every prime \(p\ge7\),
+\(9A\equiv52kB_{p-3}\pmod p\), where \(B_j\) is the \(j\)-th Bernoulli
+number. For \(p\ne13\), the leading digit vanishes exactly when
+\(2^{p-1}\equiv1\bmod p^2\) or \(p\) divides the numerator of \(B_{p-3}\).
+\end{theorem}
+
+\begin{theorem}[Depth four and small torsion orders]\label{thm:cert}
+For \(S=\{2,3\}\) the full refined depth-four locus equals
+\(X(\mathbb Z[1/6])\) at each of the six primes
+\[
+ 11,\quad1093,\quad3511,\quad16843,\quad1006003,\quad2124679.
+\]
+On the \((1,1)\) refinement, weight two alone excludes primitive fourth
+roots of unity for \(7\le p<10^7\), and primitive third and sixth roots for
+\(7\le p<2\cdot10^7\), whenever the roots lie in \(\mathbb Q_p\).
+\end{theorem}
+
+The first three primes of Theorem~\ref{thm:cert} are in L\"udtke's
+theorem for \(5\le p<10000\) \cite[Theorem~1.2]{Ludtke}.
+The remaining three calculations use all-disc finite-field screens and
+local precision bounds. The torsion ranges use the published searches of
+Me\v{s}trovi\'c and Sun \cite{Mestrovic,Sun}.
+Li and L\"udtke previously used finite polylogarithms to constrain
+Teichm\"uller coordinates over imaginary quadratic fields at infinite
+depth \cite[Theorem~8.26]{LL}. Our count uses a fixed list of weights over
+\(\mathbb Q\). Zehavi studies eventual dimension inequalities for
+projective curves at sufficiently large depth \cite{Zehavi}.
+For the punctured line, the dimension count produces a relation at the
+depths in Theorem~\ref{thm:discs}; bounding the roots of its reduction
+is the additional step needed for a power saving in \(p\).
+
+\input{zero}
+\input{discs}
+\input{exceptional}
+\input{discussion}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\noindent Email: \href{mailto:prajay@prajaybasu.com}{\texttt{prajay@prajaybasu.com}}
+\end{document}

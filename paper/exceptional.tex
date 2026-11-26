@@ -1,0 +1,254 @@
+\section{Exceptional primes for the thrice-punctured line}\label{sec:exceptional}
+
+Throughout this section $S=\{2,3\}$, $p\ge7$, and the Coleman
+logarithm satisfies $\log_p(p)=0$. We use the order $z,3,9$ for
+the rows of the determinant in \cite[(6.2)]{Ludtke}. Put
+\[
+ L=\log_p(z)/p,\quad Y_m(z)=p^{-m}\operatorname{Li}_m(z),\quad
+ k=\log_p(2)/p,\quad s=\log_p(3)/p,\quad d=Y_2(3).
+\]
+Define $(A,B,C)$ to be the cross product of
+$(Y_4(3),Y_3(3),Y_1(3))$ and $(Y_4(9),2Y_3(9),8Y_1(9))$.
+The two necessary equations on refinement $(1,0)$ are
+\begin{align}
+ skY_2+dLY_1&=0,\label{eq:exc-f2}\\
+ s^3AY_4+s^2BLY_3+CL^3Y_1&=0.\label{eq:exc-f4}
+\end{align}
+The first equation is the depth-two function divided by $p^4$.
+Each raw determinant row has a factor $p^4$, and the second and
+third entries at the anchors have the further factors $s,s^3$.
+Expansion along the first row gives \eqref{eq:exc-f4} after division
+by $p^{12}s$. The scalar $s$ is nonzero since $3$ has infinite
+multiplicative order. We write $f_4$ for the raw determinant below.
+
+Jaswal uses extra divisibility of an abelian logarithm at a prime chosen
+for each class on a modular curve \cite{Jaswal}. In the equations above
+the valuations of the logarithms at the given auxiliary prime determine
+which cofactor survives reduction.
+
+\subsection{The coefficient of the tetralogarithm}
+
+\begin{proof}[Proof of Theorem~\ref{thm:cofactor}]
+Let $Z=p^{-3}\zeta_p^{\mathrm{Col}}(3)$, in the normalization
+$\operatorname{Li}_3(1)=\zeta_p^{\mathrm{Col}}(3)$.
+Since $\operatorname{Li}_1(x)=-\log_p(1-x)$, the third anchor
+entries are $-k$ and $-24k$. Thus
+\[
+ A=2k\bigl(Y_3(9)-12Y_3(3)\bigr).
+\]
+Duplication gives $Y_3(9)=4(Y_3(3)+Y_3(-3))$.
+The trilogarithm identity
+$Y_3(-3)-2Y_3(3)=-13Z/6$ follows from
+\cite[\S5.7, (5.21)]{CDL}. Hence $A=-52kZ/3$.
+Duplication at $1$ also gives $Y_3(-1)=-3Z/4$.
+By \cite[Proposition~2.1]{Besser},
+\[
+ Y_3(-1)\equiv-\tfrac12\sum_{j=1}^{p-1}(-1)^j j^{-3}
+ \pmod p.
+\]
+The full reciprocal-cube sum is zero in $\mathbb F_p$. Consequently
+the alternating sum equals twice its even-index part, namely
+$\tfrac14\sum_{i=1}^{(p-1)/2}i^{p-4}$. Faulhaber's formula reduces
+the latter sum, before multiplication by $1/4$, to
+\[
+ \frac{B_{p-3}(1/2)-B_{p-3}}{p-3}
+ =\frac{(2^{4-p}-2)B_{p-3}}{p-3}
+ \equiv-2B_{p-3}\pmod p .
+\]
+The Bernoulli denominators are units by von Staudt--Clausen.
+It follows that $Y_3(-1)\equiv B_{p-3}/4$ and
+$9A\equiv52kB_{p-3}\pmod p$.
+Finally $k\equiv-(2^{p-1}-1)/p\pmod p$ by expanding the logarithm
+of $2^{p-1}$. Away from $13$ the two possible zero factors give
+precisely the base-two Wieferich and the Wolstenholme congruences
+(the latter equivalently $\binom{2p-1}{p-1}\equiv1\pmod{p^4}$ by
+\cite[Theorem~1]{AebiCairns}). At $13$ the factor $52$ vanishes.
+\end{proof}
+
+\subsection{The residue and lifting certificates}
+
+For a residue $a\ne0,1$ let $\zeta_a$ be its Teichm\"uller representative,
+$h=a/(1-a)$ and $c_m=\ell_m(a)/(a-1)$. On its disc $L$ takes all
+values in $\mathbb Z_p$. Besser's reduction at the centre and the
+Coleman differential equations give, for $1\le m\le4$,
+\begin{equation}\label{eq:exc-local}
+ Y_m(L)\equiv\sum_{j=0}^{m-1}c_{m-j}L^j/j!+hL^m/m!\pmod p.
+\end{equation}
+Indeed $Y_m'=Y_{m-1}$ and, for $R(x)=x/(1-x)$ and
+$b_j=((x\,d/dx)^jR)(\zeta_a)$, the exact tail after the centre
+terms is $\sum_{j\ge0}b_jp^jL^{j+m}/(j+m)!$. Each $b_j$ is integral.
+For $p\ge7$ and $j\ge1$, $v_p((j+m)!)< (j+m)/(p-1)\le(j+4)/6$,
+so this tail reduces to its $j=0$ term and converges on the whole
+disc. See \cite[Propositions~2.1 and~2.3]{Besser}.
+On $(1,1)$ the logarithm vanishes, so $z=\zeta_a$ and both
+$c_2=c_4=0$ are necessary \cite[Theorem~3.2]{Ludtke}.
+
+\begin{proof}[Proof of the depth-four assertion of Theorem~\ref{thm:cert}]
+L\"udtke's Theorem~1.2 covers $11,1093,3511$. For each of the three
+remaining primes we show that $(1,0)$ consists of $-3,-1,3,9$ and
+$(1,1)$ consists of $-1$. The integral-point inclusion gives all
+five component memberships. Lemma~3.1 of \cite{Ludtke} then gives
+the 21 integral points in the full refined locus.
+
+At $p=1006003$ we have $s\equiv0$ and $k,d,C$ are units. For
+clarity, define
+\[
+ H(y)=Ad^3y_1^2y_4-Bkd^2y_1y_2y_3-Ck^3y_2^3,
+ \qquad Q(X)=\ell_1(X)^2+2X\ell_2(X).
+\]
+Multiply \eqref{eq:exc-f4} by $d^3Y_1^2$ and substitute
+\eqref{eq:exc-f2} to obtain $s^3 H(Y)=0$. Subtract
+$CL^2$ times \eqref{eq:exc-f2} from $d$ times \eqref{eq:exc-f4}
+and cancel $s$ to obtain
+$s^2AdY_4+sBdLY_3-CkL^2Y_2=0$.
+If $L\equiv0$ then $H(\boldsymbol\ell(a))=0$ by homogeneity.
+Otherwise the two equations imply $Y_1\equiv Y_2\equiv0$, and
+eliminating $L$ in \eqref{eq:exc-local} gives $Q(a)=0$.
+At a residue with $c_1=0$, either necessary condition forces
+$c_2=0$. All eight such residues have $c_2\ne0$ in the exhaustive
+field calculation. The first branch leaves
+\[
+ 3,\ 9,\ 335334,\ 670669,\ 894225,\ 1006000,\ 1006002,
+\]
+and the second leaves $2$. On all eight discs the depth-two reduction
+$dL(c_1+hL)$ has two simple roots. Each of the sixteen classes therefore
+has exactly one depth-two point. Twelve lifts have a nonzero digit of
+$f_4/p^{13}$. The four other classes contain the four stated integral
+points and uniqueness identifies each lift. For example, the point $2$
+has $f_4(2)/p^{15}\equiv717943\pmod p$. The common centre test on
+$(1,1)$ leaves only $a=-1$.
+
+At $p=16843,2124679$ the cofactor satisfies $A\equiv0$. On every
+disc the depth-two reduction $uL^2+vL+w$ has coefficients
+\[
+ (u,v,w)=\bigl(h(ks/2+d),\ c_1(ks+d),\ ks c_2\bigr),\qquad u\ne0.
+\]
+For each square discriminant, test both roots (once for zero) in
+$L(s^2B Y_3(L)+CL^2Y_1(L))=0$, using \eqref{eq:exc-local}.
+The enumeration gives the following counts and the first nonzero
+digit of the raw determinant at $2$.
+\[
+\begin{array}{r|r|r|r|r|r}
+p&\text{discs}&\text{depth-two classes}&\text{common}
+ &\text{singular common}&f_4(2)/p^{13}\bmod p\\ \hline
+16843&16841&16692&5&0&14351\\
+2124679&2124677&2124776&5&0&1644662
+\end{array}
+\]
+Evaluating $L$ at $-3,-1,2,3,9$ gives the five distinct common
+classes. Hensel's lemma gives exactly one depth-two root per class.
+At $2$ the root is $2$ itself, since
+$\operatorname{Li}_1(2)=\operatorname{Li}_2(2)=0$; the last column
+excludes it at depth four. The remaining four lifts are the stated
+integral points. For both primes the simultaneous centre test
+$c_2=c_4=0$ leaves just $a=-1$.
+\end{proof}
+
+The base-two degeneracy differs slightly. At $1093$ and $3511$,
+$s,d$ are units, $k\equiv0$, and $A=kA'$, $B=kB'$ by the third
+anchor entries. Eliminating $LY_1$ from \eqref{eq:exc-f4} gives
+$s^2dA'Y_4+sdB'LY_3-CL^2Y_2=0$. Testing at the two reduced
+depth-two coordinates $L=0,\ell_1(a)/a$ leaves respectively six
+residues $3,9,822,972,1090,1092$ and four residues $3,9,3508,3510$.
+The branches coincide at $-1$ in both cases. The field tests give
+candidate counts here; the exact loci follow from \cite[Theorem~1.2]{Ludtke}.
+At $11$ the same $H,Q$ test as at $1006003$ gives seven and one
+residues respectively and sixteen simple depth-two classes.
+
+\paragraph{Reproduction and precision.}
+The companion source supplies the three exhaustive screens and their
+reproduction commands. SageMath evaluates the four tables by Bluestein
+convolution; a separate FLINT~3 checker uses a polynomial subproduct tree.
+The two paths compare every table entry. At \(p=1006003\) the precision-12
+calculation produces the sixteen rows of the accompanying lift table.
+For $1006003$, \texttt{check\_lifts.py 1006003 26} and the same command
+with $32$ independently reproduce the sixteen JSON lines using NumPy,
+gmpy2, modular integration and Newton iteration. To reproduce the small
+Wieferich field counts run \texttt{sage -python family\_budget.py}
+with each prime as its argument. At a centre $\zeta$ the weight-$m$
+depleted value is the unit moment of $x^{-m}$ for the measure with
+mass $\zeta^a/(1-\zeta^{p^e})$ on $a+p^e\mathbb Z_p$.
+Expansion at $a=i+pb$ through degree $r-1$ computes it modulo $p^r$,
+since all higher terms lie in $p^r\mathbb Z_p$. Multiplication by
+$p^m/(p^m-1)$ restores the Coleman value. In $t=(z-\zeta)/p$,
+successive integrations of $d\operatorname{Li}_m=
+\operatorname{Li}_{m-1}\,dz/z$ give degree-$j$ coefficients of
+valuation at least $j-m\lfloor\log_p j\rfloor$. The checkers cap precision
+at the coefficient and omitted-tail bounds before dividing by powers
+of $p$. At the Wolstenholme primes eight depleted digits give absolute
+precision $20$ for the displayed raw determinants. Lean checks the
+algebraic cancellations, local reduction implications and discriminant
+test. The numerical tables, Coleman input and Hensel identifications
+enter through the calculations above.
+
+\subsection{Orders three, four and six on the torsion component}
+
+Fix $m\in\{2,4\}$ and an order $e=3$ or $4$. For $p\equiv1\pmod e$
+choose a primitive $e$th root $\eta\in\mathbb Z_p$. Let $\chi$ be
+the primitive odd character of conductor $e$ and $\omega$ the
+Teichm\"uller character. In the interpolation convention
+$L_p(1-j,\psi)=(1-(\psi\omega^{-j})(p)p^{j-1})L(1-j,\psi\omega^{-j})$
+with the primitive character in the Euler factor, we have
+\[
+ 2M_m(\eta):=2(1-p^{-m})\operatorname{Li}_m(\eta)
+ =(\eta-\eta^{-1})L_p(m,\chi\omega^{1-m}).
+\]
+Indeed $\eta^a-\eta^{-a}=(\eta-\eta^{-1})\chi(a)$. For
+$n_r=p^{r-1}(p-1)-m$, the difference of the full power moments at
+$n_r$ equals $(\eta-\eta^{-1})L(-n_r,\chi)$ by the Bernoulli
+generating series. Removing multiples of $p$ contributes
+$1-p^{n_r}$, and interpolation as $-n_r\to m$ gives the formula.
+The inverse-root moments have opposite signs by even-weight inversion
+\cite[\S\S VI--VII]{Coleman}. For a primitive sixth root $\xi$,
+$-\xi=(\xi^2)^{-1}$. Duplication and inversion give
+$\operatorname{Li}_m(\xi)=(1+2^{1-m})\operatorname{Li}_m(\xi^2)$.
+The factors $3/2,9/8$ are units for the primes in this section.
+
+For $e=3$, put $h=p-m$. Applying the Bernoulli formula for
+$L(1-h,\chi)$ and reflecting $B_h(2/3)=-B_h(1/3)$ gives
+\[
+ M_m(\eta)\equiv
+ -\frac{(\eta-\eta^{-1})3^{h-1}}{h}B_h(1/3)\pmod p .
+\]
+Sun reports one prime $3<p<2\cdot10^7$ with
+$B_{p-2}(1/3)\equiv0$, namely $205129$ \cite[Remark~17]{Sun}.
+At its cubic root of residue $81187$ one finds
+$M_2/p\equiv170025$ and $M_4\equiv30238\pmod p$.
+Thus weight two excludes orders three and six on $(1,1)$ throughout
+$7\le p<2\cdot10^7$, using a second digit at that prime. At nonsplit
+primes the roots do not belong to $\mathbb Q_p$.
+
+For $e=4$ let $i^2=-1$, $n=p-1-m$ and define signed Euler numbers by
+$\operatorname{sech}(t)=\sum E_jt^j/j!$. Differentiating
+$(1-X^p)/(1-X)=\sum_{j=0}^{p-1}X^j$ with $(X\,d/dX)^n$ in
+characteristic $p$ gives
+\[
+ \ell_m(i)=(1-i)\frac{i}{2}E_n .
+\]
+Indeed the $n$th logarithmic derivative of $(1-X)^{-1}$ at $i$
+is the $n$th derivative at zero of
+$(1-i e^t)^{-1}=(1-\tanh t+i\operatorname{sech} t)/2$,
+and $n$ is positive even. Me\v{s}trovi\'c's exhaustive computation
+finds just three primes below $10^7$ dividing $E_{p-3}$
+\cite{Mestrovic}. For the indicated roots the following table records
+the next weight and the next digit of the original weight.
+\[
+\begin{array}{r|r|r|r|r}
+p&i\bmod p&\ell_2(i)&\ell_4(i)&M_2(i)/p\bmod p\\ \hline
+149&44&0&143&85\\
+241&64&0&105&103\\
+2946901&722077&0&1422053&1795894
+\end{array}
+\]
+Here the $\ell_m$ columns are finite-field values. For either
+conductor the moment column is reproducible modulo $p^2$ by summing
+$\eta^a a^{-m}/(1-\eta)$ over $1\le a<p^2$, $p\nmid a$.
+In $a=u+pb$, the two inner sums are
+$\sum_{b=0}^{p-1}\eta^b=1$ and
+$\sum_{b=0}^{p-1}b\eta^b=(p-1)\eta/(\eta-1)$; expanding the inverse
+power to first order leaves $p-1$ outer summands. Inversion handles
+the conjugate root. This excludes primitive fourth roots on $(1,1)$
+for $7\le p<10^7$. Both range conclusions use the cited searches
+and direct calculations at the listed exceptions. They concern these
+specified torsion orders; the distribution of other orders and the
+cross-prime density of simultaneous zeros remain open here.

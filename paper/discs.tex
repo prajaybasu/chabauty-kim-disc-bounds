@@ -1,0 +1,202 @@
+\section{Residue discs at fixed depth}\label{sec:discs}
+
+The proof of Theorem~\ref{thm:discs} uses a relation whose coefficients
+may depend on every $p$-adic period occurring in localisation. Its degree
+will depend only on $s=|S|$. Ghosh and Ward obtained
+$O_n(p/\log p)$ for the roots of a single $\ell_n$ with $n\ge2$
+\cite[Theorem~1]{GW}. In the Chabauty--Kim setting,
+Betts, Kumpitsch and L\"udtke used a finite polylogarithm of weight
+$p-3$ to isolate one Teichm\"uller point
+\cite[Proposition~5.15]{BKL}. Here the weights stay fixed and the
+relation may mix them. We first bound the number of residues satisfying
+any such relation. Write
+\[
+  \ell_i(X)=\sum_{m=1}^{p-1}\frac{X^m}{m^i}\in\mathbb F_p[X],
+  \qquad \boldsymbol\ell=(\ell_1,\ldots,\ell_n).
+\]
+
+\begin{lemma}\label{lem:mixed-disc-count}
+Fix $n\ge2$ and nonnegative integers $h,d$. For every prime $p$ and every
+nonzero $R\in\mathbb F_p[X,y_1,\ldots,y_n]$ with $\deg_X R\le h$
+and total $y$-degree at most $d$,
+\[
+ \#\{a\in\mathbb F_p\setminus\{0,1\}:
+                  R(a,\boldsymbol\ell(a))=0\}
+       \ll_{n,h,d}p^{1-1/(2n)} .
+\]
+\end{lemma}
+
+\begin{proof}
+We use the auxiliary variables $X,W,y_1,\ldots,y_n$ in the manner of
+Ghosh and Ward \cite[\S3]{GW}. Put
+\[
+ \delta=X(1-X)\partial_X+(X-W)\partial_{y_1}
+             +(1-X)\sum_{i=2}^n y_{i-1}\partial_{y_i},
+ \qquad \delta W=0.
+\]
+Upon substituting $W=X^p$ and $y_i=\ell_i(X)$ this derivation induces
+$D=X(1-X)\,d/dX$. Indeed $X(1-X)\ell_1'=X-X^p$ by summing a geometric
+progression, and $X\ell_i'=\ell_{i-1}$ for $i\ge2$.
+
+Set $N_t=\binom{t+n}{n}$, choose an integer $b>3nd+h+1$, and put
+$A=r=t^2$, $B=bt$. Seek $\Phi$ in the space of polynomials of
+degrees at most $A,B,t$ in $X,W,\boldsymbol y$, respectively, taking
+total degree in $\boldsymbol y$. For $0\le j<r$ impose the linear conditions
+\[
+             R\mid (\delta^j\Phi)(X,X,\boldsymbol y).
+\]
+The right-hand polynomials have $X$-degree at most $E=A+B+r$ and
+$y$-degree at most $t$, since $\delta$ raises total $(X,W)$-degree by
+at most one and preserves the $y$-degree bound. In this space, multiples
+of $R$ include the injective image under multiplication by $R$ of the
+box with bounds $E-h,t-d$. For $t$ sufficiently large the codimension is
+therefore at most
+\[
+ (E+1)(N_t-N_{t-d})+hN_{t-d}
+       \le (3ndt+h)N_t .
+\]
+Here $E+1\le 3t^2$ and telescoping the last $d$ binomial increments gives
+$N_t-N_{t-d}\le d\binom{t+n-1}{n-1}\le dnN_t/(t+1)$.
+The total codimension is smaller than $(A+1)(B+1)N_t$, so a nonzero
+$\Phi$ exists.
+
+Choose $t=\lfloor c_n p^{1/(2n)}\rfloor$ with $c_n>0$ sufficiently small.
+For $A=t^2$, the bound $N_t A+\binom{N_t}{2}=O_n(t^{2n})$ uses $n\ge2$.
+Thus for large $p$ the bound is strictly below $p$, and $t,r<p$.
+Corollary~\ref{cor:box} now shows that for every nonzero
+coefficient $f(X,\boldsymbol y)$ of $\Phi$ as a polynomial in $W$,
+\[
+                       X^p\nmid f(X,\boldsymbol\ell(X)).
+\]
+In particular, taking the first nonzero coefficient, with index $i$,
+the corresponding summand of
+$F(X)=\Phi(X,X^p,\boldsymbol\ell(X))$ has order strictly below $(i+1)p$
+at zero, and all subsequent summands have order at least $(i+1)p$.
+Hence $F\ne0$ and $\deg F\le A+pB+(p-1)t$.
+
+At a residue $a$ counted by the lemma, $a^p=a$, so the divisibility
+conditions give $(D^jF)(a)=0$ for all $j<r$. If $F$ had order $m<r$
+there, with leading coefficient $u$ in $X-a$, we would have
+$(D^mF)(a)=m![a(1-a)]^mu\ne0$. Thus each residue contributes at
+least $r$ to the degree of $F$, giving an upper bound
+$1+(b+1)p/t$. The finitely many smaller primes can be absorbed into the
+implied constant.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:discs}]
+Use the standard integral model
+$X=\mathbb P^1_{\mathbb Z}\setminus\{0,1,\infty\}$ and its usual
+tangential base point at zero directed towards one for polylogarithmic
+coordinates. Take $p\notin S$ and $s\ge1$. We may suppose $p>n+1$,
+where $n=2s$ for the refined locus and $n=4s$ for the unrefined locus.
+For smaller $p$ the trivial bound $p-2$ suffices, with a constant
+depending only on $s$. Passing from the full depth-$n$ fundamental
+group to its polylogarithmic quotient carries the global and local Kummer
+conditions into the corresponding quotient conditions. It suffices to bound
+the reductions of the resulting polylogarithmic locus.
+
+The localisation formula of Betts, Kumpitsch and L\"udtke
+\cite[Propositions~5.3 and~5.9, Theorem~5.6]{BKL}
+has global coordinates $x_\ell,y_\ell$ for $\ell\in S$, of weight one,
+and $z_j$ for odd $3\le j<n$, of weight $j$ (here $n$ is even).
+In the refined case $2\notin S$ forces emptiness by the local
+condition $X(\mathbb Z_2)=\varnothing$. If $2\in S$, there are $3^s$
+refinement conditions, choosing for each $\ell$ one of the hyperplanes
+$x_\ell=0$, $y_\ell=0$, $x_\ell+y_\ell=0$
+\cite[Proposition~5.11]{BKL}. On each resulting linear subspace there
+are $s+(s-1)=n-1$ free coordinates. In the unrefined case the whole
+source has $2s+(2s-1)=n-1$ coordinates. Denote either list by $v$.
+In these coordinates the local functions
+\[
+ L=p^{-1}\log_p,\qquad Y_m=p^{-m}\operatorname{Li}_m\quad(1\le m\le n)
+\]
+pull back to polynomials $L(v),Y_m(v)$ over $K=\mathbb Q_p$ of ordinary
+degrees at most $1,m$, respectively. In fact each term in the
+localisation formula of weight $m$ is a product of $m$ weight-one
+coordinates, or of a coordinate $z_j$ and $m-j$ weight-one coordinates;
+restricting to the chosen linear subspace preserves the degree bound.
+
+Adjoin a free variable $x$. Define $W_0=-x$, $W_m=(x-1)Y_m(v)$ for $m>0$,
+and form the map from $\mathbb A_K^n$ to $\mathbb A_K^{n+1}$ with coordinates
+\[
+ x,\qquad u_m=\sum_{j=0}^{m}W_{m-j}\frac{(-L(v))^j}{j!}
+           \quad (1\le m\le n).
+\]
+All coordinates have degree at most $D=n+1$. Set $H=((n+1)D+1)^n$.
+Polynomials of individual variable degrees at most $H$ in the target
+have dimension $(H+1)^{n+1}$. After substitution their individual
+variable degrees in the source are at most $(n+1)DH$. The source
+space has dimension at most
+\[
+ ((n+1)DH+1)^n\le H(H+1)^n<(H+1)^{n+1}.
+\]
+Consequently a nonzero polynomial $P$ of individual degrees at most $H$
+vanishes identically after substitution. Divide by a coefficient of
+maximal $p$-adic absolute value to make $P$ integral with nonzero
+reduction $R$. This normalization uses only coefficients of $P$ and
+requires no integrality of $v$ or of the periods. Moreover,
+$P(x,\boldsymbol u)$, viewed as a polynomial in $x$ and the local
+coordinates $L,\boldsymbol Y$, vanishes on the product of the $x$-line
+with the Zariski closure of the localisation image. This follows by
+taking its coefficients in $x$, each of which pulls back to zero.
+
+We compute $\boldsymbol u$ modulo $p$ at a local point $z$ reducing
+to $a\ne0,1$. Let $\zeta$ be the Teichm\"uller lift of $a$, and write
+$z=\zeta(1+pw)$ with $w\in\mathbb Z_p$. Then
+$L(z)\equiv w\pmod p$. At $\zeta$, the $p$-depleted polylogarithm
+$\operatorname{Li}_m(\zeta)-p^{-m}\operatorname{Li}_m(\zeta^p)$
+equals $(p^m-1)Y_m(\zeta)$. Its reduction is
+$\ell_m(a)/(1-a)$ by Besser \cite[Proposition~2.1]{Besser}. Hence
+$Y_m(\zeta)$ is integral with reduction $\ell_m(a)/(a-1)$.
+Set $Y_0(\zeta)=\zeta/(1-\zeta)$. Besser's translation formula
+\cite[Proposition~2.3]{Besser} gives integral $Y_m(z)$ and
+\[
+ Y_m(z)\equiv\sum_{j=0}^m Y_{m-j}(\zeta)w^j/j!\pmod p .
+\]
+Take any integral $x$ lifting $a$. Since $(a-1)Y_0(\zeta)\equiv-a$,
+the reductions of $W_0,W_1,\ldots,W_n$ are the coefficients through
+degree $n$ of
+\[
+ \left(-a+\sum_{m=1}^n\ell_m(a)T^m\right)
+                 \sum_{j=0}^n\frac{\bar w^j T^j}{j!}
+                \quad\text{in }\mathbb F_p[T]/(T^{n+1}).
+\]
+The sum defining $u_m$ multiplies this expression by the truncated
+exponential of $-\bar w T$. The two exponentials multiply to $1$
+in this ring, by the binomial identity and $n<p$. We obtain
+$u_m\equiv\ell_m(a)\pmod p$.
+
+If $z$ lies in the locus under consideration, its local coordinates lie
+in the localisation image or its closure, so
+$R(a,\boldsymbol\ell(a))=0$. Apply Lemma~\ref{lem:mixed-disc-count} with
+$h=H$ and $d=nH$. Each image contributes $O_n(p^{1-1/(2n)})$ discs.
+Summing over at most $3^s$ images in the refined case, and taking the
+single image in the unrefined case, gives the asserted exponents
+$1-1/(4s)$ and $1-1/(8s)$.
+\end{proof}
+
+\paragraph{An affine genus-two pullback.}
+Let $C$ be the smooth projective model of $y^2=x^5-x$ and let $U$ be
+the inverse image of $X$ under the hyperelliptic projection. The branch
+divisor consists of $0,\infty$ and the four fourth roots of unity,
+which are pairwise distinct in odd characteristic. Thus the double
+cover has genus two by Riemann--Hurwitz and good reduction away from
+$2$. Removing the three ramification points above $0,1,\infty$ gives
+a finite degree-two morphism $U\to X$ over $\mathbb Z[1/2]$.
+Use the compatible integral base points $(-1,0)$ and $-1$. Base-point
+change on $X$ twists path torsors by the path torsor between the two
+base points and identifies the corresponding local and global Kummer
+conditions; thus the disc bound computed in tangential coordinates
+applies with base point $-1$ as well.
+
+For $S=\{2\}$, functoriality sends the full refined depth-two locus of
+$U$ into that of $X$: the homomorphism of unipotent fundamental groups
+preserves the lower central series, and its induced map on torsors
+commutes with localisation and the local Kummer maps. The image of
+each local Kummer closure lies in the corresponding closure for $X$,
+by continuity in the Zariski topology. At an odd prime $p$, each
+residue $a$ on the target has at most two lifts, since its fibre
+satisfies $y^2=a^5-a$. Theorem~\ref{thm:discs} gives
+$O(p^{3/4})$ occupied discs for the full refined depth-two locus
+of $U$. This conclusion concerns the open curve with the specified
+three punctures.

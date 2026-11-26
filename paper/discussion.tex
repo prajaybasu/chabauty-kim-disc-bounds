@@ -1,0 +1,166 @@
+\section{Limits of the estimates and a projective comparison}
+\subsection{The dimension ceiling in four weights}
+Let \(J_{p,t}\) evaluate \(P(X,y_1,\ldots,y_4)\) at the four finite
+polylogarithms modulo \(X^p\), with \(\deg_X P\le t^2\) and
+\(\deg_y P\le t\) in total. Its source has dimension
+\(D=(t^2+1)\binom{t+4}{4}\sim t^6/24\). An injectivity theorem up
+to \(t=\lfloor cp^{1/6}\rfloor\) for a fixed small \(c>0\) would give
+\(O(p^{5/6})\) in Lemma~\ref{lem:mixed-disc-count} for \(n=4\), by
+leaving the auxiliary polynomial and multiplicity steps unchanged.
+The example in Theorem~\ref{thm:zero} explains why an improvement of this
+kind must exploit the particular system of finite polylogarithms.
+
+For \(t=1,2,3\) one can prove maximal rank for every prime by an integer
+calculation. On coefficients of index at most \(D\), the Taylor coefficients
+of the characteristic-zero series \(\sum_{j\ge1}X^j/j^i\) specialize
+to the finite series for every \(p>D\). The pure \(X\)-power columns give
+an identity block on rows \(0,\ldots,t^2\). Complete the block in two ways
+by using either the next \(D-t^2-1\) rows or the same rows shifted up
+by one index. Clear denominators in each remaining row. The clearing
+factors are units for \(p>D\). If both integer minors vanished modulo such a
+prime it would divide their gcd. The following table gives the bit lengths
+of the minors, their gcd after removing all factors at most \(D\), and
+the number of smaller primes checked directly for surjectivity.
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+\(t\)&\(D\)&bit lengths&remaining gcd&primes \(p\le D\)\\
+\midrule
+1&10&37,\ 37&1&4\\
+2&75&9636,\ 9869&1&21\\
+3&350&332544,\ 334400&1&70\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus \(\operatorname{rank}J_{p,t}=\min(D,p)\) for these three values of \(t\).
+The second minor matters already at \(t=2,p=109\), where the first 75
+rows have rank 74. In boundary tests up to \(t=7\), the calculation gives
+ranks \(16493\) and \(16500\) at \(p=16493\) and \(16519\) respectively
+when \(D=16500\). A bound for growing \(t\) remains open.
+
+\subsection{Density one at depth four}
+For \(S=\{2,3\}\), equality with the 21 integral points for a density-one
+set of auxiliary primes would require excluding extra common zeros on
+both refinement components. Even on \((1,1)\), where the logarithm
+restricts the points to roots of unity, two difficulties remain. The
+possible orders grow with \(p-1\). At a fixed order three or four the
+conditions at weights two and four evaluate different branches
+\(\chi\omega^{-1}\) and \(\chi\omega^{-3}\) of the \(p\)-adic \(L\)-function.
+The calculation at either conductor in Section~\ref{sec:exceptional}
+rules out individual primes by finding a nonzero digit. It gives no
+density estimate for simultaneous vanishing as \(p\) varies.
+Betts, Kumpitsch and L\"udtke isolate \(-1\) using a weight depending on
+\(p\) \cite[Proposition~5.15]{BKL}. The question here fixes the depth.
+
+\subsection{A genus-three calculation and the Cartier operator}
+Consider the smooth projective model \(C\) of
+\[
+ y^2=f(x)=4x^7+9x^6-8x^5-36x^4-16x^3+32x^2+32x+8.
+\]
+Its Jacobian \(J\) has rank one. The divisor \(D=(-1,-1)-\infty\) has
+infinite order \cite[Example~4.1]{GenusThree}. At a good odd prime we
+count the discs meeting the inverse image of \(\mathbb Q_p\log D\)
+under \(P\mapsto\log[P-\infty]\). This definition uses the rational
+Mordell--Weil span and requires no identification with a Selmer group.
+
+Away from branch points choose a lift \(Q\) with local coordinate
+\(x=x(Q)+pw\). Project the integrals of \(x^i\,dx/(2y)\), \(0\le i\le2\),
+onto an integral basis of the two-dimensional annihilator of \(\log D\).
+Write \(c_1,c_2\) for the two projected constants and \(u_1,u_2\) for their
+tangent coefficients modulo \(p\). A lift requires \(c_i\in p\mathbb Z_p\)
+and
+\[
+                 c_i/p+u_iw=0 \pmod p,\qquad i=1,2.
+\]
+For a nonzero slope vector, compatibility amounts to
+\((c_1/p)u_2-(c_2/p)u_1=0\bmod p\). When both slopes vanish, both
+reduced constants must vanish. A change of lift translates the constant
+vector along the slope vector. Stoll also uses the direction of a
+normalized abelian logarithm, combining it at \(p=2\) with a global
+Selmer-group test for rational points \cite[Proposition~2.8]{Stoll}.
+
+Table~\ref{tab:genus} gives the calculation for all 45 odd primes below
+200. For \(n=\#J(\mathbb F_p)\), compute \([n](Q-\infty)\) in the
+formal neighbourhood of the identity. Translating by a regular
+degree-three divisor allows Cantor arithmetic on a chart with simple
+support. Integrating between the two sets of nearby support points and
+taking the trace gives \(p^{-1}\log([n](Q-\infty))\bmod p^3\).
+For \(p\ge5\) the omitted terms of degree \(j\ge4\) have valuation at least
+\(j-v_p(j)\ge4\) before dividing by \(p\). Testing all admissible local
+digits gives the upper count. Lower witnesses are the Weierstrass
+points and the available pairs above \(x=-1,1,0\). The former two
+pairs are rational. For \(x=0\) a torsion witness follows from
+\[
+ \begin{aligned}
+ B &=x^2+4x+2,\\
+ A &=-x^6-16x^5-36x^4+72x^2+64x+16,&
+ A^2-8fB^2&=x^{12}.
+ \end{aligned}
+\]
+At \(P=(0,2\sqrt2)\) the function \(A-2\sqrt2\,yB\) has a zero
+of order 12 and a unique pole at infinity. Its divisor proves that
+\(12[P-\infty]=0\). For \(p=3,7\) there is a witness on every disc.
+At the remaining primes the upper and lower counts coincide.
+In particular, at \(p=41\) successive precision levels reduce the
+upper count from \(40\) to \(12\) and then \(10\).
+\begin{table}[htbp]
+\centering
+\caption{Classical abelian Chabauty on \(C\). In each group \(n\) counts
+all residue discs and \(o\) counts the occupied discs.}\label{tab:genus}
+\begin{tabular}{rrr@{\qquad}rrr@{\qquad}rrr}
+\toprule
+\(p\)&\(n\)&\(o\)&\(p\)&\(n\)&\(o\)&\(p\)&\(n\)&\(o\)\\
+\midrule
+3&5&5&59&61&5&131&161&5\\
+5&6&4&61&62&8&137&140&10\\
+7&10&10&67&69&5&139&138&8\\
+11&16&6&71&79&9&149&164&6\\
+13&15&5&73&72&10&151&140&12\\
+17&15&11&79&75&11&157&152&6\\
+19&28&6&83&72&6&163&165&7\\
+23&30&10&89&81&9&167&139&9\\
+29&30&6&97&103&9&173&176&6\\
+31&29&9&101&106&6&179&183&5\\
+37&39&5&103&103&9&181&185&5\\
+41&40&10&107&96&6&191&201&11\\
+43&47&7&109&109&5&193&208&10\\
+47&45&9&113&124&10&197&211&5\\
+53&62&6&127&145&9&199&184&10\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the holomorphic basis the Cartier--Manin matrix has entries
+\([x^{pi-j}]f^{(p-1)/2}\), \(1\le i,j\le3\), up to the transpose
+convention \cite{AchterHowe}. Its rank is three at 43 of these primes
+and two at 5 and 13. Since Cartier annihilates exact differentials, a
+nonzero reduced annihilating differential at an ordinary prime cannot
+have a rational primitive on the special fibre. The tangent slopes in
+the test are algebraic; recovering the constants across discs calls for
+further information about the lifts. Obtaining a bounded-degree relation
+among those constants as \(p\) varies remains open.
+
+\paragraph{Formalization and reproducibility.}
+The companion source is available on GitHub.
+\begin{quote}
+\url{https://github.com/prajaybasu/chabauty-kim-disc-bounds}
+\end{quote}
+It contains a single Lean package. Its logarithmic modules check the last-pivot row, adjugate denominator, bounded-height
+horizontal classification, jet differentiation, and the dimension and
+kernel calculations used for the lower bound. The choice of the cyclic
+rows, their degree growth and the realization by iterated integrals are
+given in Section~\ref{sec:zero}. The Selmer and disc modules verify
+bounded-degree elimination, primitive reduction and inverse translation.
+Localization, the Coleman comparison and the auxiliary-polynomial count
+are supplied by the cited results and Section~\ref{sec:discs}.
+The exceptional-prime modules verify the local tail and finite-field
+implications with the stated analytic inputs. The exact tables are
+checked by arithmetic programs. To reproduce the rank computation, run the following command.
+\begin{verbatim}
+sage -python mixed_rank.py --certify 1 2 3
+\end{verbatim}
+To reproduce the 45-prime census and its witnesses, run this command in
+the same directory.
+\begin{verbatim}
+sage -python genus_three_jacobian.py
+\end{verbatim}
