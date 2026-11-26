@@ -23,8 +23,8 @@ For a strictly triangular logarithmic system of rank \(N\) in characteristic
 on that kernel. We bound the vanishing order of a polynomial linear form of degree \(A\)
 by \(NA+d\binom N2\) whenever this quantity is below \(p\).
 Here \(d\) depends on the poles and the centre of expansion.
-A family with two fixed poles and constant linear forms has quadratic
-vanishing order in the rank. Applied to finite polylogarithms, the estimate
+With two fixed poles, varying the residues gives constant linear forms
+whose vanishing order grows quadratically with the rank. Applied to finite polylogarithms, the estimate
 bounds the number of residue discs occupied by the refined depth-\(2s\)
 Chabauty--Kim locus of the thrice-punctured line by
 \(O_s(p^{1-1/(4s)})\), where \(s\) is the number of inverted primes.
@@ -34,7 +34,7 @@ and determine the refined locus at the auxiliary primes
 \end{abstract}
 
 \noindent\textbf{2020 Mathematics Subject Classification.}
-Primary 12H20; Secondary 11G30, 11G55.
+Primary 11G55; Secondary 12H20, 11G30.
 
 \section{Introduction}
 A single equation between Coleman functions can have zeros in many residue
@@ -44,10 +44,16 @@ over \(\mathbb F_p\) between the residue and its finite polylogarithms.
 Its coefficients can vary with the prime. The estimate must therefore
 apply to every nonzero equation of the prescribed degrees.
 
-Cyclic differentiation and minors also enter characteristic-zero
-multiplicity estimates \cite{Fischler}. Here the height bound on a
-normalised row controls the extra derivative constants in
-\(\mathbb F_p(X^p)\).
+The proof uses the cyclic differentiation and minors of the
+Shidlovsky multiplicity method; see Nesterenko \cite{Nesterenko},
+Bertrand and Beukers \cite{BertrandBeukers}, and Fischler \cite{Fischler}.
+Chudnovsky's characteristic-zero Fuchsian estimate already has a term
+proportional to the pole count times $\binom N2$
+\cite[Corollary~11.3.10]{Chudnovsky}; see also
+\cite[Theorem~3.2.10]{CDT}. Here the input is a jet over $\mathbb F_p$
+satisfying the system only through order $p-1$. The bound on the minors
+keeps the reduced numerators and denominators below degree $p$,
+where a rational function with zero derivative must be constant.
 
 \begin{theorem}[Triangular logarithmic zero estimate]\label{thm:zero}
 Let \(k=\mathbb F_p\), let \(\Sigma\subset k\) be finite and nonempty, and
@@ -84,6 +90,19 @@ for \(s=1\) are \(7/8\) and \(3/4\). For the inverse image of \(X\) in
 bound for \(S=\{2\}\) is also \(O(p^{3/4})\).
 \end{theorem}
 
+For $S=\{2\}$, Best et al.\ identify the refined depth-two locus through
+the $S_3$-orbits of the nontrivial Teichm\"uller points satisfying
+$\Li_2(z)=0$ and verify equality with the integral points at depth two for
+all odd $p<10^5$ \cite[Theorem~A and Remark~3.6]{BestEtAl}.
+Betts, Kumpitsch and L\"udtke prove equality with $\{2,-1,1/2\}$
+at infinite depth for every odd prime \cite[Corollary~5.17]{BKL}.
+For $p\ge5$ their proof uses $\Li_{p-3}$, and at $p=3$ the logarithm
+suffices. Theorem~\ref{thm:discs} bounds the depth-two locus uniformly
+as $p$ varies. The refined Kim conjecture concerns equality at sufficiently
+large depth. Here the depth is prescribed as a function of $s$ alone.
+At fixed $s$ the theorem implies that
+the proportion of occupied discs tends to zero uniformly in $S$.
+
 At depth four, L\"udtke's equations for \(S=\{2,3\}\) use two known
 points \(3,9\) to eliminate the global period coefficients of a
 determinant \cite[Theorem~3.8]{Ludtke}. We use \(\log_p(p)=0\),
@@ -103,18 +122,18 @@ number. For \(p\ne13\), the leading digit vanishes exactly when
 
 \begin{theorem}[Depth four and small torsion orders]\label{thm:cert}
 For \(S=\{2,3\}\) the full refined depth-four locus equals
-\(X(\mathbb Z[1/6])\) at each of the six primes
+\(X(\mathbb Z[1/6])\) at each of the three primes
 \[
- 11,\quad1093,\quad3511,\quad16843,\quad1006003,\quad2124679.
+ 16843,\quad1006003,\quad2124679.
 \]
 On the \((1,1)\) refinement, weight two alone excludes primitive fourth
 roots of unity for \(7\le p<10^7\), and primitive third and sixth roots for
 \(7\le p<2\cdot10^7\), whenever the roots lie in \(\mathbb Q_p\).
 \end{theorem}
 
-The first three primes of Theorem~\ref{thm:cert} are in L\"udtke's
+L\"udtke already gives equality at $11,1093,3511$ in his
 theorem for \(5\le p<10000\) \cite[Theorem~1.2]{Ludtke}.
-The remaining three calculations use all-disc finite-field screens and
+The three calculations in Theorem~\ref{thm:cert} use all-disc finite-field screens and
 local precision bounds. The torsion ranges use the published searches of
 Me\v{s}trovi\'c and Sun \cite{Mestrovic,Sun}.
 Li and L\"udtke previously used finite polylogarithms to constrain
@@ -137,7 +156,9 @@ including Claude Opus 5.5, Fable 5.2, Gemini 4 Neon, and GPT-6.2 Astra.
 These tools were used to explore and refine arguments, generate and check Lean
 formalizations, perform computational verifications, and assist in drafting the
 manuscript. All mathematical claims, proofs, and computations were independently
-verified by the author. Lean proofs were machine-checked. The author takes full
+verified by the author. Lean~4 checks algebraic lemmas, eliminations and
+local tail bounds. The final paragraph of Section~\ref{sec:discussion} describes
+the scope of the formalisation and the computational checks. The author takes full
 responsibility for the correctness and content of the paper.
 
 \bibliographystyle{plain}
