@@ -27,7 +27,7 @@ We also prove `one_one_sieve_sound` for the `(1, 1)` component.
 
 public section
 
-namespace BBPGrouping
+namespace ChabautyKimDiscs
 
 private theorem padicInt_p_ne_zero (p : ℕ) [Fact p.Prime] : (p : ℤ_[p]) ≠ 0 := by
   have hp : p ≠ 0 := (Fact.out : p.Prime).ne_zero
@@ -230,4 +230,4 @@ theorem one_one_sieve_sound (p : ℕ) [Fact p.Prime] (c2 c4 : ZMod p)
   have hY4_0 : Y4 = 0 := (mul_eq_zero.mp h4).resolve_left (pow_ne_zero 4 hp0)
   exact ⟨by rw [← hY2, hY2_0, map_zero], by rw [← hY4, hY4_0, map_zero]⟩
 
-end BBPGrouping
+end ChabautyKimDiscs

@@ -16,7 +16,7 @@ constraint on the reductions of integral common zeros.
 
 public section
 
-namespace BBPGrouping.UniformDiscBound
+namespace ChabautyKimDiscs.UniformDiscBound
 
 /-- Coordinates scaled by the factorial of their index. -/
 structure Jet (R : Type*) where
@@ -184,4 +184,4 @@ theorem resultant_disc_constraint {σ : Type*} (p : ℕ) [Fact p.Prime]
   rw [map_add, map_mul, map_mul, hf, hg, zero_mul, zero_mul, add_zero] at eq
   simpa [φ] using eq.symm
 
-end BBPGrouping.UniformDiscBound
+end ChabautyKimDiscs.UniformDiscBound

@@ -25,27 +25,13 @@ with TemporaryDirectory() as tmp:
 
     lean = repo / "lean"
     package = ancillary / "lean"
-    modules = package / "BBPGrouping"
+    modules = package / "ChabautyKimDiscs"
     modules.mkdir(parents=True)
-    for name in ("lakefile.toml", "lake-manifest.json", "lean-toolchain"):
+    for name in ("lakefile.toml", "lake-manifest.json", "lean-toolchain",
+                 "ChabautyKimDiscs.lean", "AuditAxioms.lean"):
         copy2(lean / name, package)
-    entry = lean / "BBPGrouping/ChabautyKim.lean"
-    copy2(entry, modules)
-    for line in entry.read_text().splitlines():
-        if line.startswith("public import BBPGrouping."):
-            module_name = line.rsplit(".", 1)[1]
-            copy2(lean / "BBPGrouping" / f"{module_name}.lean", modules)
-    (package / "BBPGrouping.lean").write_text("module\n\npublic import BBPGrouping.ChabautyKim\n")
-
-    # Use the same private-declaration audit, with imports scoped to this paper.
-    audit = (lean / "AuditAxioms.lean").read_text().splitlines()
-    selected = []
-    for line in audit:
-        if line.startswith("import all BBPGrouping."):
-            if not (modules / (line.rsplit(".", 1)[1] + ".lean")).is_file():
-                continue
-        selected.append(line)
-    (package / "AuditAxioms.lean").write_text("\n".join(selected) + "\n")
+    for module in (lean / "ChabautyKimDiscs").glob("*.lean"):
+        copy2(module, modules)
 
     with tarfile.open(archive, "w:gz", format=tarfile.USTAR_FORMAT) as tar:
         for path in sorted(stage.rglob("*")):

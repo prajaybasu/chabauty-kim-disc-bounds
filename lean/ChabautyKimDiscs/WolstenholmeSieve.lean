@@ -12,7 +12,7 @@ disc to survive the local equations.
 
 public section
 
-namespace BBPGrouping.Wolstenholme
+namespace ChabautyKimDiscs.Wolstenholme
 
 /-- The hypotheses are the reduced duplication formula, the trilogarithm identity at -3,
 the value at -1, and the alternating cubic harmonic sum. -/
@@ -53,4 +53,4 @@ theorem discriminant_test {F : Type*} [Field F] (u v w L : F)
     have h : (4 * u) * (u * L ^ 2 + v * L + w) = 0 := by linear_combination e
     exact (mul_eq_zero.mp h).resolve_left (mul_ne_zero h4 hu)
 
-end BBPGrouping.Wolstenholme
+end ChabautyKimDiscs.Wolstenholme

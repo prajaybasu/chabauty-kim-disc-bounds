@@ -1,6 +1,6 @@
 module
 
-public import BBPGrouping.MirimanoffSieve
+public import ChabautyKimDiscs.MirimanoffSieve
 public import Mathlib.Algebra.Polynomial.Roots
 public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.Tactic
@@ -14,7 +14,7 @@ at base two records the extra cancellation in that family.
 
 public section
 
-namespace BBPGrouping.MirimanoffFamily
+namespace ChabautyKimDiscs.MirimanoffFamily
 
 /-- The homogeneous cubic obtained after eliminating the local coordinate. -/
 def cubic {R : Type*} [CommRing R] (k d A B C y₁ y₂ y₃ y₄ : R) : R :=
@@ -172,4 +172,4 @@ theorem candidates_eleven :
       (y 1 ≠ 0 ∨ y 2 ≠ 0) ∧ ((y 2 = 0 ∧ y 4 = 0) ↔ a = 10) := by
   decide +kernel
 
-end BBPGrouping.MirimanoffFamily
+end ChabautyKimDiscs.MirimanoffFamily

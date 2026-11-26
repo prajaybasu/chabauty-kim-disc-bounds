@@ -37,4 +37,4 @@ for p in 16843 2124679; do
 done
 ~~~
 
-The archive uses the Chabauty–Kim entry point of the shared Lean package and the repository's pinned dependencies. The final paragraph of the manuscript identifies the formal statements, arithmetic certificates and cited analytic inputs for each part of the argument.
+The archive uses the standalone Lean library `ChabautyKimDiscs` and its pinned dependencies. The final paragraph of the manuscript identifies the formal statements, arithmetic certificates and cited analytic inputs for each part of the argument.

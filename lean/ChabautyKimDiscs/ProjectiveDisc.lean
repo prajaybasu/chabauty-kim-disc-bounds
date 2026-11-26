@@ -13,7 +13,7 @@ a norm identity supplies a torsion witness in the genus-three example.
 
 public section
 
-namespace BBPGrouping.ProjectiveDisc
+namespace ChabautyKimDiscs.ProjectiveDisc
 
 /-- Changing the centre of a residue disc shifts the two constant terms
 by the same multiple of the tangent vector. -/
@@ -52,4 +52,4 @@ theorem torsion_norm {R : Type*} [CommRing R] (x : R) :
     8 * (4*x^7 + 9*x^6 - 8*x^5 - 36*x^4 - 16*x^3 + 32*x^2 + 32*x + 8) *
       (x^2 + 4*x + 2)^2 = x^12 := by ring
 
-end BBPGrouping.ProjectiveDisc
+end ChabautyKimDiscs.ProjectiveDisc

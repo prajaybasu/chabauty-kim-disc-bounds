@@ -12,7 +12,7 @@ of the matrix on columns. This criterion applies to integral Taylor coefficient 
 
 public section
 
-namespace BBPGrouping.MixedRank
+namespace ChabautyKimDiscs.MixedRank
 
 /-- Two square row minors certify injectivity after reduction at every prime
 which does not divide their integer determinant gcd. -/
@@ -34,4 +34,4 @@ theorem injective_of_minor_gcd {ι κ : Type*} [Fintype ι] [DecidableEq ι]
   · exact minor s fun hs => h (dvd_gcd hr hs)
   · exact minor r hr
 
-end BBPGrouping.MixedRank
+end ChabautyKimDiscs.MixedRank

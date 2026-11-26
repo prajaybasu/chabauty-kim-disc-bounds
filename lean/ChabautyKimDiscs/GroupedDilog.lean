@@ -11,7 +11,7 @@ at all powers of a unit. -/
 
 public section
 
-namespace BBPGrouping.GroupedDilog
+namespace ChabautyKimDiscs.GroupedDilog
 
 open Finset
 
@@ -255,4 +255,4 @@ theorem batch_evaluation {R : Type*} [CommRing R] (w : Rˣ)
   simp only [zpow_natCast, Units.val_pow_eq_pow_val]
   ring
 
-end BBPGrouping.GroupedDilog
+end ChabautyKimDiscs.GroupedDilog

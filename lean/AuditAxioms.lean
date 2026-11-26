@@ -1,18 +1,18 @@
 module
 
-import BBPGrouping
-import all BBPGrouping.GroupedDilog
-import all BBPGrouping.LogarithmicZeroEstimate
-import all BBPGrouping.MirimanoffFamily
-import all BBPGrouping.MirimanoffLocalExpansion
-import all BBPGrouping.MirimanoffSieve
-import all BBPGrouping.MixedRank
-import all BBPGrouping.PolylogZeroEstimate
-import all BBPGrouping.ProjectiveDisc
-import all BBPGrouping.SelmerDiscBound
-import all BBPGrouping.TorsionDisc
-import all BBPGrouping.UniformDiscBound
-import all BBPGrouping.WolstenholmeSieve
+import ChabautyKimDiscs
+import all ChabautyKimDiscs.GroupedDilog
+import all ChabautyKimDiscs.LogarithmicZeroEstimate
+import all ChabautyKimDiscs.MirimanoffFamily
+import all ChabautyKimDiscs.MirimanoffLocalExpansion
+import all ChabautyKimDiscs.MirimanoffSieve
+import all ChabautyKimDiscs.MixedRank
+import all ChabautyKimDiscs.PolylogZeroEstimate
+import all ChabautyKimDiscs.ProjectiveDisc
+import all ChabautyKimDiscs.SelmerDiscBound
+import all ChabautyKimDiscs.TorsionDisc
+import all ChabautyKimDiscs.UniformDiscBound
+import all ChabautyKimDiscs.WolstenholmeSieve
 import Lean.Util.CollectAxioms
 import Lean.Elab.Command
 
@@ -25,7 +25,7 @@ run_cmd do
   for (name, _) in env.constants.toList do
     let some idx := env.getModuleIdxFor? name | continue
     let modName := env.header.moduleNames[idx]!
-    unless (`BBPGrouping).isPrefixOf modName do continue
+    unless (`ChabautyKimDiscs).isPrefixOf modName do continue
     for ax in ← Lean.collectAxioms name do
       unless #[``propext, ``Classical.choice, ``Quot.sound].contains ax do
         throwError "{name} in {modName} depends on unexpected axiom {ax}"

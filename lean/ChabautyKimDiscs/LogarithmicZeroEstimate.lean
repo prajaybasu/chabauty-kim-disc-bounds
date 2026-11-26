@@ -1,6 +1,6 @@
 module
 
-public import BBPGrouping.PolylogZeroEstimate
+public import ChabautyKimDiscs.PolylogZeroEstimate
 public import Mathlib.FieldTheory.RatFunc.AsPolynomial
 import Mathlib.Tactic
 
@@ -14,11 +14,11 @@ lemmas treat truncated jets and the two chains in the quadratic lower-bound exam
 
 public section
 
-namespace BBPGrouping.LogarithmicZeroEstimate
+namespace ChabautyKimDiscs.LogarithmicZeroEstimate
 
 open Polynomial Matrix
 open scoped Matrix
-open BBPGrouping.PolylogZeroEstimate
+open ChabautyKimDiscs.PolylogZeroEstimate
 
 variable {p : ℕ} [Fact p.Prime]
 local notation "k" => ZMod p
@@ -241,4 +241,4 @@ theorem two_chain_kernel {F : Type*} [Field F] {r s : ℕ}
   have hz : u (Fin.last r) = 0 := he.resolve_right hj
   exact ⟨(last_supported u hu).trans (by simp [hz]), last_supported v hv⟩
 
-end BBPGrouping.LogarithmicZeroEstimate
+end ChabautyKimDiscs.LogarithmicZeroEstimate

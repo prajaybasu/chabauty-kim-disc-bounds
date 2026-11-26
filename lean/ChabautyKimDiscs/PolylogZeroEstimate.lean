@@ -22,7 +22,7 @@ calculations supply ingredients of the multiplicity estimate.
 
 public section
 
-namespace BBPGrouping.PolylogZeroEstimate
+namespace ChabautyKimDiscs.PolylogZeroEstimate
 
 open MvPolynomial
 
@@ -611,4 +611,4 @@ theorem nonvanishing_of_horizontal_constants [Nonempty ι] [Fintype κ] [LinearO
     · simpa [hj] using hzero j hj
   exact unit_row_nonvanishing φ (RatFunc.algebraMap_injective K) M d oneCol hi hd (heq ▸ hh) w hw
 
-end BBPGrouping.PolylogZeroEstimate
+end ChabautyKimDiscs.PolylogZeroEstimate

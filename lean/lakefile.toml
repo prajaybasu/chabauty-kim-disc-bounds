@@ -1,7 +1,7 @@
-name = "bbp_grouping"
+name = "chabauty_kim_discs"
 version = "0.1.0"
 keywords = ["math"]
-defaultTargets = ["BBPGrouping", "AuditAxioms"]
+defaultTargets = ["ChabautyKimDiscs", "AuditAxioms"]
 
 [leanOptions]
 pp.unicode.fun = true # pretty-prints `fun a ↦ b`
@@ -16,7 +16,7 @@ scope = "leanprover-community"
 rev = "v4.37.0-rc1"
 
 [[lean_lib]]
-name = "BBPGrouping"
+name = "ChabautyKimDiscs"
 
 [[lean_lib]]
 name = "AuditAxioms"

@@ -1,6 +1,6 @@
 module
 
-public import BBPGrouping.UniformDiscBound
+public import ChabautyKimDiscs.UniformDiscBound
 public import Mathlib.RingTheory.MvPolynomial.Basic
 import Mathlib.Tactic
 
@@ -14,7 +14,7 @@ record numerical bounds for the auxiliary-polynomial argument.
 
 public section
 
-namespace BBPGrouping.SelmerDiscBound
+namespace ChabautyKimDiscs.SelmerDiscBound
 
 open MvPolynomial
 open scoped BigOperators
@@ -139,4 +139,4 @@ theorem auxiliary_size {p n t a c : ℕ} (hn : 1 ≤ n) (ht : 2 ≤ t)
   have hprod := Nat.mul_le_mul hA (Nat.pow_le_pow_right (by decide : 0 < 4) hc)
   exact ⟨by omega, by nlinarith [Nat.mul_le_mul_left (t ^ 2) (show 1 ≤ 4 ^ (n*t) by omega)]⟩
 
-end BBPGrouping.SelmerDiscBound
+end ChabautyKimDiscs.SelmerDiscBound

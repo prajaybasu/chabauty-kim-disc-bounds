@@ -1,7 +1,7 @@
 module
 
-public import BBPGrouping.PolylogZeroEstimate
-import all BBPGrouping.PolylogZeroEstimate
+public import ChabautyKimDiscs.PolylogZeroEstimate
+import all ChabautyKimDiscs.PolylogZeroEstimate
 public import Mathlib.FieldTheory.Finite.Basic
 import Mathlib.Tactic
 
@@ -14,7 +14,7 @@ factor test detects extra common zeros, and a separate lemma gives uniqueness of
 
 public section
 
-namespace BBPGrouping.TorsionDisc
+namespace ChabautyKimDiscs.TorsionDisc
 
 open Polynomial
 open PolylogZeroEstimate (finiteLi finiteLi_step finiteLi_first)
@@ -182,4 +182,4 @@ theorem teichmuller_block_sums {R : Type*} [CommRing R] (z : R) (p : ℕ)
   rw [weighted_geom_sum_mul, hz, hsum]
   ring
 
-end BBPGrouping.TorsionDisc
+end ChabautyKimDiscs.TorsionDisc

@@ -1,6 +1,6 @@
 module
 
-public import BBPGrouping.MirimanoffSieve
+public import ChabautyKimDiscs.MirimanoffSieve
 public import Mathlib.Analysis.SpecificLimits.Normed
 public import Mathlib.NumberTheory.Padics.PadicVal.Basic
 import Mathlib.Tactic
@@ -9,7 +9,7 @@ import Mathlib.Tactic
 # Local `p`-adic expansion congruences `hY1–hY4` for `mirimanoff_sieve_sound`
 
 We derive the four mod-`p` congruences `hY1–hY4` assumed by
-`BBPGrouping.mirimanoff_sieve_sound` directly from the Coleman local power-series
+`ChabautyKimDiscs.mirimanoff_sieve_sound` directly from the Coleman local power-series
 expansion of `Y_m(L) = p^(-m) Li_m(ζ_a e^(pL))` in `L = log_p(z) / p ∈ ℤ_[p]`
 for primes `p ≥ 7` and weights `m ∈ {1, 2, 3, 4}`:
 
@@ -34,7 +34,7 @@ Key results:
 
 public section
 
-namespace BBPGrouping
+namespace ChabautyKimDiscs
 
 /-- The `k`-th tail term (`k` shifted by `+1`) of the weight-`m` local expansion in `ℚ_[p]`. -/
 noncomputable def localTailTerm (p m : ℕ) [Fact p.Prime] (b : ℕ → ℤ_[p]) (L : ℤ_[p]) (k : ℕ) :
@@ -357,4 +357,4 @@ theorem mirimanoff_sieve_from_local_expansion (p : ℕ) [Fact p.Prime] (hp7 : 7 
     (local_expansion_toZMod_Y4 p hp7 c4 b c1_lift c2_lift c3_lift c4_lift L Y4 hc4 hY4_exp)
     hf2 hf4
 
-end BBPGrouping
+end ChabautyKimDiscs
