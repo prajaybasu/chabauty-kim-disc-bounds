@@ -24,9 +24,12 @@ on that kernel. We bound the vanishing order of a polynomial linear form of degr
 by \(NA+d\binom N2\) whenever this quantity is below \(p\).
 Here \(d\) depends on the poles and the centre of expansion.
 With two fixed poles, varying the residues gives constant linear forms
-whose vanishing order grows quadratically with the rank. Applied to finite polylogarithms, the estimate
-bounds the number of residue discs occupied by the refined depth-\(2s\)
-Chabauty--Kim locus of the thrice-punctured line by
+whose vanishing order grows quadratically with the rank.
+For a fixed list of finite polylogarithms the multiplicity bound grows
+polynomially with the auxiliary degree. This gives a power saving for
+the roots of every nonzero relation of bounded degree over \(\mathbb F_p\).
+In particular, the number of residue discs occupied by the refined depth-\(2s\)
+Chabauty--Kim locus of the thrice-punctured line is
 \(O_s(p^{1-1/(4s)})\), where \(s\) is the number of inverted primes.
 For \(S=\{2,3\}\) we identify a Bernoulli factor in a depth-four cofactor
 and determine the refined locus at the auxiliary primes
@@ -54,6 +57,9 @@ proportional to the pole count times $\binom N2$
 satisfying the system only through order $p-1$. The bound on the minors
 keeps the reduced numerators and denominators below degree $p$,
 where a rational function with zero derivative must be constant.
+Vyugin and Shkredov use a Wronskian degree bound below $p$ to prove
+independence for products of powers of shifted linear factors
+\cite[Proposition~3.2 and Lemma~3.3]{VyuginShkredov}.
 
 \begin{theorem}[Triangular logarithmic zero estimate]\label{thm:zero}
 Let \(k=\mathbb F_p\), let \(\Sigma\subset k\) be finite and nonempty, and
@@ -99,9 +105,12 @@ at infinite depth for every odd prime \cite[Corollary~5.17]{BKL}.
 For $p\ge5$ their proof uses $\Li_{p-3}$, and at $p=3$ the logarithm
 suffices. Theorem~\ref{thm:discs} bounds the depth-two locus uniformly
 as $p$ varies. The refined Kim conjecture concerns equality at sufficiently
-large depth. Here the depth is prescribed as a function of $s$ alone.
-At fixed $s$ the theorem implies that
-the proportion of occupied discs tends to zero uniformly in $S$.
+large depth. For $p>2$ there are $p-2$ residue discs. At refined depth
+$2s$ the proportion occupied is $O_s(p^{-1/(4s)})$, and at unrefined
+depth $4s$ it is $O_s(p^{-1/(8s)})$, with constants depending only on
+$s=|S|$. The refined locus is empty if $2\notin S$, since
+$X(\mathbb Z_2)=\varnothing$. For general $S$ a bound of $O_s(1)$
+occupied discs at these prescribed depths remains open.
 
 At depth four, L\"udtke's equations for \(S=\{2,3\}\) use two known
 points \(3,9\) to eliminate the global period coefficients of a

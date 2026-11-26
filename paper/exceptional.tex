@@ -160,9 +160,10 @@ At $11$ the same $H,Q$ test as at $1006003$ gives seven and one
 residues respectively and sixteen simple depth-two classes.
 
 \paragraph{Reproduction and precision.}
-The companion source supplies the three exhaustive screens and their
-reproduction commands. SageMath evaluates the four tables by Bluestein
-convolution; a separate FLINT~3 checker uses a polynomial subproduct tree.
+The companion source gives the three exhaustive screen commands in
+\path{paper/README.md} and the sixteen lift records at $p=1006003$ in
+\path{chabauty-kim/lifts.jsonl}. SageMath uses Bluestein convolution for
+the four tables. The independent FLINT~3 checker uses a polynomial subproduct tree.
 The two paths compare every table entry. At \(p=1006003\) the precision-12
 calculation produces the sixteen rows of the accompanying lift table.
 For $1006003$, \texttt{check\_lifts.py 1006003 26} and the same command

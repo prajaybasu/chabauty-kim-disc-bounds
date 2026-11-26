@@ -4,7 +4,8 @@ The proof of Theorem~\ref{thm:discs} uses a relation whose coefficients
 may depend on every $p$-adic period occurring in localisation. Its degree
 will depend only on $s=|S|$. Ghosh and Ward obtained
 $O_n(p/\log p)$ for the roots of a single $\ell_n$ with $n\ge2$
-\cite[Theorem~1]{GW}. In the Chabauty--Kim setting,
+\cite[Theorem~1]{GW}. Their nonvanishing lemma already allows mixed
+polynomials in $\ell_1,\ldots,\ell_n$. In the Chabauty--Kim setting,
 Betts, Kumpitsch and L\"udtke used a finite polylogarithm of weight
 $p-3$ to isolate one Teichm\"uller point
 \cite[Proposition~5.15]{BKL}. Here the weights stay fixed and the
@@ -82,6 +83,32 @@ least $r$ to the degree of $F$, giving an upper bound
 $1+(b+1)p/t$. The finitely many smaller primes can be absorbed into the
 implied constant.
 \end{proof}
+
+\paragraph{Comparison of the two degree bounds.}
+For a nonzero coefficient $f(X,\boldsymbol y)$ of the auxiliary polynomial,
+let $a(f)=\deg_X f$ and let $c(f)$ be its weighted degree for
+$\mathrm{wt}(y_i)=i$. The sufficient condition stated in
+Ghosh--Ward \cite[\S3, Lemma~3]{GW} for $X^p\nmid f(X,\boldsymbol\ell)$ is
+\[
+  \max\{a(f),1\}\,4^{c(f)}<p-1,\qquad
+  0<\max_i\deg_{y_i} f<p .
+\]
+Coefficients depending only on $X$ are covered directly by $\deg_X f<p$.
+In the box $a(f)\le t^2$, $\deg_{\boldsymbol y}f\le t$, the maximum of
+$c(f)$ is $nt$. For fixed $n\ge2$, the largest orders of $t$ certified
+for the whole box and the resulting bounds from $1+(b+1)p/t$ are
+\[
+\begin{array}{lccc}
+ & \text{condition on the box} & \text{scale of }t & \text{root bound} \\
+ \text{Ghosh--Ward} & t^2 4^{nt}<p-1 & \log p & O(p/\log p) \\
+ \text{Corollary~\ref{cor:box}} & N_t t^2+\binom{N_t}{2}<p
+     & p^{1/(2n)} & O(p^{1-1/(2n)})
+\end{array}
+\]
+Here $N_t=\binom{t+n}{n}$ and the implied constants in the root bounds
+may depend on $n,h,d$. The last column uses the same multiplicity
+argument for an arbitrary relation $R$ in Lemma~\ref{lem:mixed-disc-count};
+its coefficients may vary with $p$.
 
 \begin{proof}[Proof of Theorem~\ref{thm:discs}]
 Use the standard integral model
