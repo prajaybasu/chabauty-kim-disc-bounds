@@ -4,7 +4,7 @@ Throughout this section $S=\{2,3\}$, $p\ge7$, and the Coleman
 logarithm satisfies $\log_p(p)=0$. We use the order $z,3,9$ for
 the rows of the determinant in \cite[(6.2)]{Ludtke}. Put
 \[
- L=\log_p(z)/p,\quad Y_m(z)=p^{-m}\operatorname{Li}_m(z),\quad
+ L=\log_p(z)/p,\quad Y_m(z)=p^{-m}\Li_m(z),\quad
  k=\log_p(2)/p,\quad s=\log_p(3)/p,\quad d=Y_2(3).
 \]
 Define $(A,B,C)$ to be the cross product of
@@ -29,9 +29,9 @@ which cofactor survives reduction.
 \subsection{The coefficient of the tetralogarithm}
 
 \begin{proof}[Proof of Theorem~\ref{thm:cofactor}]
-Let $Z=p^{-3}\zeta_p^{\mathrm{Col}}(3)$, in the normalization
-$\operatorname{Li}_3(1)=\zeta_p^{\mathrm{Col}}(3)$.
-Since $\operatorname{Li}_1(x)=-\log_p(1-x)$, the third anchor
+Let $Z=p^{-3}\zeta_p^{\mathrm{Col}}(3)$, in the normalisation
+$\Li_3(1)=\zeta_p^{\mathrm{Col}}(3)$.
+Since $\Li_1(x)=-\log_p(1-x)$, the third anchor
 entries are $-k$ and $-24k$. Thus
 \[
  A=2k\bigl(Y_3(9)-12Y_3(3)\bigr).
@@ -127,18 +127,22 @@ For each square discriminant, test both roots (once for zero) in
 $L(s^2B Y_3(L)+CL^2Y_1(L))=0$, using \eqref{eq:exc-local}.
 The enumeration gives the following counts and the first nonzero
 digit of the raw determinant at $2$.
-\[
-\begin{array}{r|r|r|r|r|r}
-p&\text{discs}&\text{depth-two classes}&\text{common}
- &\text{singular common}&f_4(2)/p^{13}\bmod p\\ \hline
+\par\smallskip
+{\centering
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+$p$ & discs & depth-two classes & common & singular common
+  & $f_4(2)/p^{13}\bmod p$\\
+\midrule
 16843&16841&16692&5&0&14351\\
-2124679&2124677&2124776&5&0&1644662
-\end{array}
-\]
+2124679&2124677&2124776&5&0&1644662\\
+\bottomrule
+\end{tabular}\par}
+\smallskip
 Evaluating $L$ at $-3,-1,2,3,9$ gives the five distinct common
 classes. Hensel's lemma gives exactly one depth-two root per class.
 At $2$ the root is $2$ itself, since
-$\operatorname{Li}_1(2)=\operatorname{Li}_2(2)=0$; the last column
+$\Li_1(2)=\Li_2(2)=0$; the last column
 excludes it at depth four. The remaining four lifts are the stated
 integral points. For both primes the simultaneous centre test
 $c_2=c_4=0$ leaves just $a=-1$.
@@ -171,8 +175,8 @@ mass $\zeta^a/(1-\zeta^{p^e})$ on $a+p^e\mathbb Z_p$.
 Expansion at $a=i+pb$ through degree $r-1$ computes it modulo $p^r$,
 since all higher terms lie in $p^r\mathbb Z_p$. Multiplication by
 $p^m/(p^m-1)$ restores the Coleman value. In $t=(z-\zeta)/p$,
-successive integrations of $d\operatorname{Li}_m=
-\operatorname{Li}_{m-1}\,dz/z$ give degree-$j$ coefficients of
+successive integrations of $d\Li_m=
+\Li_{m-1}\,dz/z$ give degree-$j$ coefficients of
 valuation at least $j-m\lfloor\log_p j\rfloor$. The checkers cap precision
 at the coefficient and omitted-tail bounds before dividing by powers
 of $p$. At the Wolstenholme primes eight depleted digits give absolute
@@ -190,7 +194,7 @@ Teichm\"uller character. In the interpolation convention
 $L_p(1-j,\psi)=(1-(\psi\omega^{-j})(p)p^{j-1})L(1-j,\psi\omega^{-j})$
 with the primitive character in the Euler factor, we have
 \[
- 2M_m(\eta):=2(1-p^{-m})\operatorname{Li}_m(\eta)
+ 2M_m(\eta):=2(1-p^{-m})\Li_m(\eta)
  =(\eta-\eta^{-1})L_p(m,\chi\omega^{1-m}).
 \]
 Indeed $\eta^a-\eta^{-a}=(\eta-\eta^{-1})\chi(a)$. For
@@ -201,7 +205,7 @@ $1-p^{n_r}$, and interpolation as $-n_r\to m$ gives the formula.
 The inverse-root moments have opposite signs by even-weight inversion
 \cite[\S\S VI--VII]{Coleman}. For a primitive sixth root $\xi$,
 $-\xi=(\xi^2)^{-1}$. Duplication and inversion give
-$\operatorname{Li}_m(\xi)=(1+2^{1-m})\operatorname{Li}_m(\xi^2)$.
+$\Li_m(\xi)=(1+2^{1-m})\Li_m(\xi^2)$.
 The factors $3/2,9/8$ are units for the primes in this section.
 
 For $e=3$, put $h=p-m$. Applying the Bernoulli formula for
@@ -232,14 +236,18 @@ and $n$ is positive even. Me\v{s}trovi\'c's exhaustive computation
 finds just three primes below $10^7$ dividing $E_{p-3}$
 \cite{Mestrovic}. For the indicated roots the following table records
 the next weight and the next digit of the original weight.
-\[
-\begin{array}{r|r|r|r|r}
-p&i\bmod p&\ell_2(i)&\ell_4(i)&M_2(i)/p\bmod p\\ \hline
+\par\smallskip
+{\centering
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$p$ & $i\bmod p$ & $\ell_2(i)$ & $\ell_4(i)$ & $M_2(i)/p\bmod p$\\
+\midrule
 149&44&0&143&85\\
 241&64&0&105&103\\
-2946901&722077&0&1422053&1795894
-\end{array}
-\]
+2946901&722077&0&1422053&1795894\\
+\bottomrule
+\end{tabular}\par}
+\smallskip
 Here the $\ell_m$ columns are finite-field values. For either
 conductor the moment column is reproducible modulo $p^2$ by summing
 $\eta^a a^{-m}/(1-\eta)$ over $1\le a<p^2$, $p\nmid a$.

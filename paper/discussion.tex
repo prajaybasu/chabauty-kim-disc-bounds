@@ -12,7 +12,7 @@ kind must exploit the particular system of finite polylogarithms.
 
 For \(t=1,2,3\) one can prove maximal rank for every prime by an integer
 calculation. On coefficients of index at most \(D\), the Taylor coefficients
-of the characteristic-zero series \(\sum_{j\ge1}X^j/j^i\) specialize
+of the characteristic-zero series \(\sum_{j\ge1}X^j/j^i\) specialise
 to the finite series for every \(p>D\). The pure \(X\)-power columns give
 an identity block on rows \(0,\ldots,t^2\). Complete the block in two ways
 by using either the next \(D-t^2-1\) rows or the same rows shifted up
@@ -70,13 +70,13 @@ Write \(c_1,c_2\) for the two projected constants and \(u_1,u_2\) for their
 tangent coefficients modulo \(p\). A lift requires \(c_i\in p\mathbb Z_p\)
 and
 \[
-                 c_i/p+u_iw=0 \pmod p,\qquad i=1,2.
+                 c_i/p+u_iw\equiv 0 \pmod p,\qquad i=1,2.
 \]
 For a nonzero slope vector, compatibility amounts to
-\((c_1/p)u_2-(c_2/p)u_1=0\bmod p\). When both slopes vanish, both
+\((c_1/p)u_2-(c_2/p)u_1\equiv0\pmod p\). When both slopes vanish, both
 reduced constants must vanish. A change of lift translates the constant
 vector along the slope vector. Stoll also uses the direction of a
-normalized abelian logarithm, combining it at \(p=2\) with a global
+normalised abelian logarithm, combining it at \(p=2\) with a global
 Selmer-group test for rational points \cite[Proposition~2.8]{Stoll}.
 
 Table~\ref{tab:genus} gives the calculation for all 45 odd primes below
@@ -140,7 +140,7 @@ the test are algebraic; recovering the constants across discs calls for
 further information about the lifts. Obtaining a bounded-degree relation
 among those constants as \(p\) varies remains open.
 
-\paragraph{Formalization and reproducibility.}
+\paragraph{Formalisation and reproducibility.}
 The companion source is available on GitHub.
 \begin{quote}
 \url{https://github.com/prajaybasu/chabauty-kim-disc-bounds}
@@ -148,17 +148,21 @@ The companion source is available on GitHub.
 It contains a single Lean package. Its logarithmic modules check the last-pivot row, adjugate denominator, bounded-height
 horizontal classification, jet differentiation, and the dimension and
 kernel calculations used for the lower bound. The choice of the cyclic
-rows, their degree growth and the realization by iterated integrals are
+rows, their degree growth and the realisation by iterated integrals are
 given in Section~\ref{sec:zero}. The Selmer and disc modules verify
 bounded-degree elimination, primitive reduction and inverse translation.
-Localization, the Coleman comparison and the auxiliary-polynomial count
+Localisation, the Coleman comparison and the auxiliary-polynomial count
 are supplied by the cited results and Section~\ref{sec:discs}.
 The exceptional-prime modules verify the local tail and finite-field
 implications with the stated analytic inputs. The exact tables are
-checked by arithmetic programs. To reproduce the rank computation, run the following command.
+checked by arithmetic programs.
+
+\begin{samepage}
+To reproduce the rank computation, run the following command.\par\nopagebreak
 \begin{verbatim}
 sage -python mixed_rank.py --certify 1 2 3
 \end{verbatim}
+\end{samepage}
 To reproduce the 45-prime census and its witnesses, run this command in
 the same directory.
 \begin{verbatim}
